@@ -2,6 +2,8 @@
 
 #include <felspar/exceptions.hpp>
 
+#include <iostream>
+
 #include <android/asset_manager.h>
 #include <android/asset_manager_jni.h>
 #include <jni.h>
