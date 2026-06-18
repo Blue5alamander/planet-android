@@ -39,7 +39,7 @@ namespace {
         std::optional<std::vector<std::byte>> try_load(
                 std::ostream &log,
                 std::filesystem::path const &fn,
-                felspar::source_location const &loc) const override {
+                std::source_location const &loc) const override {
             JNIEnv *env = (JNIEnv *)SDL_AndroidGetJNIEnv();
             if (not jAsset or not jAssetManager) {
                 throw felspar::stdexcept::runtime_error{
