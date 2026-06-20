@@ -58,8 +58,8 @@ namespace {
                     AAsset_close(asset);
                     return buffer;
                 } else {
-                    log << "Asset could not be loaded from the Android native "
-                           "asset manager\n";
+                    log << "Asset " << assetfn
+                        << " could not be loaded from the Android native asset manager\n";
                     return {};
                 }
             } else {
@@ -69,8 +69,8 @@ namespace {
                         jAsset, loader, jAssetManager, asset));
                 jbyteArray *bytes(reinterpret_cast<jbyteArray *>(&load_result));
                 if (*bytes == nullptr) {
-                    log << "Asset could not be loaded from the Java asset "
-                           "manager\n";
+                    log << "Asset " << assetfn
+                        << " could not be loaded from the Java asset manager\n";
                     return {};
                 } else {
                     std::size_t const length = env->GetArrayLength(*bytes);
